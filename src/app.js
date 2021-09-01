@@ -7,6 +7,8 @@ const geocodeAsync = require('./utils/geocode');
 const forecastAsync = require('./utils/forecast');
 
 const app = expressLib();
+const port = process.env.PORT || 3000;
+
 const publicDir = pathLib.join(__dirname, '../public');
 
 app.use(expressLib.static(publicDir));
@@ -96,6 +98,7 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.');
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });
