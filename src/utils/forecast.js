@@ -16,10 +16,14 @@ const forecastAsync = (latitude, longitude, callback) => {
         const current = data.current;
 
         callback(null, {
+            feelsLike: current.feelslike,
+            humidity: current.humidity,
             location,
-            temperature: current.temperature,
             observationTime: current.observation_time,
-            type: current.weather_descriptions[0]
+            temperature: current.temperature,
+            type: current.weather_descriptions[0],
+            windDirection: current.wind_dir,
+            windSpeed: current.wind_speed
         });
     });
 };
