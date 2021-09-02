@@ -72,8 +72,8 @@ app.get('/api/weather', (req, res) => {
 
             const location = current.location;
             const forecast = `Weather is ${current.type}. 
-                              Temperature is ${current.temperature}°C and feels like ${current.feelsLike}°C. 
-                              Humidity ${current.humidity}%. 
+                              Temperature is ${current.temperature}°C and it feels like ${current.feelsLike}°C. 
+                              The humidity ${current.humidity}%. 
                               Wind speed is ${current.windSpeed}km/h, direction ${current.windDirection}`;
 
             return res.send({ location, forecast, address });
